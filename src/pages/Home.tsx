@@ -205,8 +205,8 @@ export default function Home({ targetSection }: HomeProps) {
               className="h-9 w-9 rounded-xl border border-border/80 object-cover"
             />
             <div className="leading-tight">
-              <div className="text-sm font-semibold tracking-wide">Sherlock Holmes</div>
-              <div className="text-[11px] text-muted-foreground tracking-[0.2em] uppercase">Science of Deduction</div>
+              <div className="text-sm font-semibold tracking-wide">Sherlock Holmes John Watson</div>
+              <div className="text-[11px] text-muted-foreground tracking-[0.2em] uppercase">221B Baker street</div>
             </div>
           </Link>
 
@@ -290,16 +290,16 @@ export default function Home({ targetSection }: HomeProps) {
               <div className="md:col-span-8">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-1 text-xs">
                   <Fingerprint className="h-3.5 w-3.5" />
-                  <span className="text-muted-foreground">221B · 仅限有趣案件</span>
+                  <span className="text-muted-foreground">221B Supernatural</span>
                 </div>
 
                 <h1 className="mt-4 text-4xl md:text-6xl leading-[1.05]">
-                  {(siteSettings?.title ?? "Sherlock Holmes") + "，"}
-                  <span className="block">{siteSettings?.tagline ?? "把世界拆开再拼回去。"}</span>
+                  {(siteSettings?.title ?? "Sherlock Holmes") + "John Watson"}
+                  <span className="block">{siteSettings?.tagline ?? "欢迎来到伦敦。-JW 一定要打招呼吗？你好。-SH"}</span>
                 </h1>
                 <p className="mt-4 max-w-xl text-muted-foreground">
                   {siteSettings?.description ??
-                    "这是一个可运营的个人主页原型：既保留案件档案与分析，也允许生活化日常“插队”。你会看到证据板、暗号练习，以及一小块不那么严肃的日常记录。"}
+                    "这是我和约翰的网站，我认为言简意赅。"}
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -337,8 +337,8 @@ export default function Home({ targetSection }: HomeProps) {
           <Card className="border-border/70 bg-card/90 backdrop-blur">
             <CardHeader className="sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <CardTitle className="text-xl">本周行动清单</CardTitle>
-                <CardDescription>把“推理”拆成可执行的动作。</CardDescription>
+                <CardTitle className="text-xl">行动清单</CardTitle>
+                <CardDescription>给你们的清单，立刻观察所有你认为的东西，别把它降级成文具店便签本。</CardDescription>
               </div>
               <Badge variant="secondary" className="mt-2 sm:mt-0 rounded-full">
                 Weekly
@@ -346,7 +346,7 @@ export default function Home({ targetSection }: HomeProps) {
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
-                {[{ icon: Search, text: "观察：三处细节，不记录不算" }, { icon: Brain, text: "推断：写下两个‘更可能’" }, { icon: FlaskConical, text: "验证：做一个小实验" }, { icon: Telescope, text: "收尾：删掉一个不必要的习惯" }].map(
+                {[{ icon: Search, text: "观察" }, { icon: Brain, text: "推断" }, { icon: FlaskConical, text: "验证" }, { icon: Telescope, text: "收尾" }].map(
                   (it) => (
                     <div key={it.text} className="flex items-start gap-3">
                       <div className="mt-0.5 h-8 w-8 rounded-lg bg-muted flex items-center justify-center border border-border/60">
@@ -360,15 +360,15 @@ export default function Home({ targetSection }: HomeProps) {
                 )}
               </div>
               <div className="rounded-2xl border border-border/70 bg-muted/30 p-4">
-                <div className="text-sm font-semibold">使用方式</div>
+                <div className="text-sm font-semibold">使用</div>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  把每条动作当作一次小实验：写下观察、给出两种解释、再用证据否定其中一个。
+                  任何事物都可能会是有意义的线索，记下来，思考才是最重要的。
                 </p>
                 <Separator className="my-3" />
                 <Button
                   variant="outline"
                   className="w-full"
-                  onClick={() => toast.message("已标记完成", { description: "原型演示：此处可接入真实待办/订阅。" })}
+                  onClick={() => toast.message("完成，你可以去光合作用了-SH 不用听他的，休息才最重要。-JW", { description: "原型演示：此处可接入真实待办/订阅。" })}
                 >
                   <CheckCircle2 className="mr-2 h-4 w-4" />
                   标记今日完成
@@ -382,12 +382,12 @@ export default function Home({ targetSection }: HomeProps) {
         <section id="method" className="mx-auto max-w-6xl px-4 py-14 md:py-18">
           <SectionTitle
             kicker="Method"
-            title="三步法：观察 → 推断 → 排除"
-            desc="参考官方站点的骨架，但换成更‘可训练’的版本：每一步给你一个可执行动作。"
+            title="观察 → 推断 → 排除"
+            desc="我不是推理老师，这些是一瞬间就可以得出来的结论，如果你没有兴趣，划走。"
             right={
               <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card px-4 py-2 text-sm">
                 <ClipboardList className="h-4 w-4" />
-                <span className="text-muted-foreground">训练比天赋更稳定</span>
+                <span className="text-muted-foreground">联想比直接看更有意思</span>
               </div>
             }
           />
@@ -395,8 +395,8 @@ export default function Home({ targetSection }: HomeProps) {
           <div className="mt-10 grid lg:grid-cols-12 gap-6">
             <Card className="lg:col-span-7 overflow-hidden">
               <CardHeader>
-                <CardTitle className="text-2xl">科学演绎法 · 训练版</CardTitle>
-                <CardDescription>把“我觉得”换成“我有证据”。</CardDescription>
+                <CardTitle className="text-2xl">科学演绎法</CardTitle>
+                <CardDescription>你认为的东西大概率不正确，拿出事实再说话。</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid sm:grid-cols-3 gap-3">
@@ -413,10 +413,10 @@ export default function Home({ targetSection }: HomeProps) {
                       <div className="mt-2 text-lg font-semibold">{t}</div>
                       <p className="mt-2 text-sm text-muted-foreground">
                         {t === "观察"
-                          ? "先记事实：光线、材质、气味、时间、距离。"
-                          : t === "推断"
-                            ? "把事实连成线：写下两种可能，再找证据击倒其中一个。"
-                            : "排除不可能：如果一条路无法解释全部证据，就让它死。"}
+                          ? "不是只像苏格兰场一样大脑空空什么都不知道。这是公开场合，Lestrade他们也会看网站的。-JW"
+                          : t === "推理"
+                            ? "我能从电脑键盘中推断出对方是上班族，单身，周日有约会对象，不喜欢喝牛奶只喜欢吃膨化薯片，失眠，爱看足球比赛，但买彩票从不中奖，我知道下一期中奖彩票号码。"
+                            : "夏老师，你上电视了。-JW"}
                       </p>
                     </div>
                   ))}
@@ -424,15 +424,15 @@ export default function Home({ targetSection }: HomeProps) {
 
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="a">
-                    <AccordionTrigger>一个简单练习：一分钟内观察你桌面</AccordionTrigger>
+                    <AccordionTrigger>练习：20秒观察你的桌面</AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
-                      写下：3个你能证实的事实、2个你想推断的结论、1个你愿意立刻排除的猜测。然后再看一眼——你会发现第四个细节。
+                      桌子的意义是生活化工具，事实可以被证明。
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="b">
                     <AccordionTrigger>为什么要“先观察”？</AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
-                      因为大脑喜欢补全。补全是偷懒，也是误判的起点。证据越早写下，越不容易被后续故事污染。
+                      无聊的问题。大多数人的脑子都是今天吃什么，今天喝什么，今天我好难过，到底有什么用？John，我在打字，你这是什么表情？夏洛克，我现在“很难过。”
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -445,14 +445,14 @@ export default function Home({ targetSection }: HomeProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10" />
               </div>
               <CardHeader className="relative">
-                <CardTitle className="text-2xl">证据板不是装饰</CardTitle>
-                <CardDescription>它是一种思考姿势。</CardDescription>
+                <CardTitle className="text-2xl">证据板提醒</CardTitle>
+                <CardDescription>约翰负责，我才不要自己记东西。</CardDescription>
               </CardHeader>
               <CardContent className="relative">
                 <div className="rounded-2xl border border-border/70 bg-background/70 p-4">
-                  <div className="text-sm font-medium">今日关键词</div>
+                  <div className="text-sm font-medium">关键词</div>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    {["微量残留", "行为诱导", "时间线", "不在场证明", "环境微差"].map((t) => (
+                    {["残留", "行为", "时间线", "不在场证明", "环境"].map((t) => (
                       <Badge key={t} variant="secondary" className="rounded-full">
                         {t}
                       </Badge>
@@ -476,7 +476,7 @@ export default function Home({ targetSection }: HomeProps) {
           <SectionTitle
             kicker="Case Files"
             title="案件档案"
-            desc="案例、进行中调查与归档记录。每一份都按“背景-观察-推断-结论”写清楚。"
+            desc="这是我的地盘。"
             right={
               <div className="flex items-center gap-2">
                 <Button variant="secondary" onClick={() => toast.info("原型演示", { description: "可接入搜索与标签筛选。" })}>
@@ -600,8 +600,8 @@ export default function Home({ targetSection }: HomeProps) {
 
           <Tabs defaultValue="grid" className="mt-10">
             <TabsList className="bg-muted/50">
-              <TabsTrigger value="grid">瀑布流</TabsTrigger>
-              <TabsTrigger value="notes">短札</TabsTrigger>
+              <TabsTrigger value="grid">约翰的作用/TabsTrigger>
+              <TabsTrigger value="notes">留言条</TabsTrigger>
             </TabsList>
 
             <TabsContent value="grid" className="mt-6">
@@ -644,8 +644,8 @@ export default function Home({ targetSection }: HomeProps) {
                   <Card key={n} className="relative overflow-hidden">
                     <Noise />
                     <CardHeader>
-                      <CardTitle className="text-xl">短札</CardTitle>
-                      <CardDescription>一行就够。</CardDescription>
+                      <CardTitle className="text-xl">留言条</CardTitle>
+                      <CardDescription>你正在思考今晚吃什么，John，我要薯条。</CardDescription>
                     </CardHeader>
                     <CardContent className="text-lg leading-relaxed">“{n}”</CardContent>
                   </Card>
@@ -770,7 +770,7 @@ export default function Home({ targetSection }: HomeProps) {
         <section id="contact" className="mx-auto max-w-6xl px-4 py-14 md:py-18">
           <SectionTitle
             kicker="Contact"
-            title="提交委托（有趣的才回）"
+            title="提交委托（不要打招呼。-SH，您有任何想要咨询的案件都可以留言。-JW）"
             desc="这是可运营的入口：你可以把它接到邮箱、表单服务或Notion。原型里先用前端提示代替。"
           />
 
